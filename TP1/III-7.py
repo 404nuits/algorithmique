@@ -35,7 +35,7 @@ def ask_date():
     """Ask user for a date until it's a correct date
 
     Returns:
-        array: array of [day, month, year]
+        list: list of [day, month, year]
     """
     
     ok = False
@@ -87,15 +87,32 @@ def next_date(day,month,year):
         day+=1
     return [day,month,year]
 
+def number_of_days(start_date, end_date):
+    
+    current_date = start_date
+    n_days = 0
+    
+    # We start at the start date and we go day by day, incrementing each time until we reach the end date
+    while (current_date != end_date):
+        current_date = next_date(current_date[0], current_date[1], current_date[2])
+        n_days+=1
+        
+    return n_days
+
+def age(birth_date, today_date):
+    age = today_date[2] - birth_date[2]
+    if (today_date[1] < birth_date[1]) or (today_date[1] == birth_date[1] and today_date[0] < birth_date[0]):
+        age-=1
+    return age
+
 def print_date(day,month,year):
     print(f'{day:02d}/{month:02d}/{year}')
     
-
 if __name__ == '__main__':
     
-    # print('Date de naissance :')
-    # birth_day,birth_month,birth_year = ask_date()
-    # print_date(birth_day,birth_month,birth_year)
+    print('Date de naissance :')
+    birth_day,birth_month,birth_year = ask_date()
+    print_date(birth_day,birth_month,birth_year)
     
     print('\n\nDate du jour :')
     today_day,today_month,today_year = ask_date()
@@ -104,3 +121,12 @@ if __name__ == '__main__':
     print('\n\nDate de demain : ')
     tomorrow_day,tomorrow_month,tomorrow_year = next_date(today_day, today_month, today_year)
     print_date(tomorrow_day,tomorrow_month,tomorrow_year)
+    
+    n_days = number_of_days([birth_day,birth_month,birth_year], [today_day, today_month, today_year])
+    print(f'\n\nNombre de jour entre la date de naissance et aujourd\'hui : {n_days}')
+    
+    age = age([birth_day,birth_month,birth_year], [today_day, today_month, today_year])
+    if age>1:
+        print(f'\n\nVous avez {age} ans')
+    else:
+        print(f'\n\nVous avez {age} an')
