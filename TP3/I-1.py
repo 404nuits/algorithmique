@@ -60,5 +60,5 @@ if __name__ == '__main__':
     matrice_2 = [[1,2,0],
                  [4,3,-1]]
 
-    print_matrice(produit_matrices(matrice_1,matrice_2))
+    print_matrix(matrix_product(matrice_1,matrice_2))
 

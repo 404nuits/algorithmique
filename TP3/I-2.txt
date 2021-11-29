@@ -1,0 +1,24 @@
+En reprenant le programme de I-1.py : 
+
+for ligne_m1 in m1:
+    for j,ligne_m2 in enumerate(m2):
+        for k, val_m2 in enumerate(ligne_m2):
+            l_res[k] += val_m2*ligne_m1[j]
+            
+            # 2 opérations par tour de boucle
+
+        # Donc 2*len(ligne_m2) par tour de boucle
+
+    # Donc 2*len(ligne_m2)*len(m2) par tour de boucle
+
+# Donc 2*len(ligne_m2)*len(m2)*len(m1)
+
+Le nombre d'opérations réalisées est de 2*len(ligne_m2)*len(m2)*len(m1),
+Soit no le nombre d'opérations élémentaires réalisées par le programme et en reprenant les notations de l'énoncé,
+
+no = 2*n*p*m
+
+Soit no1 le nombre d'opérations élémentaires réalisées par le programme dans l'exemple :
+no1 = 2*2*3*3 = 36
+Il y a donc 36 opérations élémentaires, et comme il y a une multiplication et une addition par tour de boucle (d'où le premier 2 dans la formule),
+le nombre de multiplications est de 36/2 = 18, de même pour le nombre d'additions

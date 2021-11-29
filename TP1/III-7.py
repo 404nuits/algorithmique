@@ -70,7 +70,17 @@ def ask_date():
     return [day,month,year]
     
 def next_date(day,month,year):
-    
+    """Returns the day coming after day entered in parameters
+
+    Args:
+        day (int): day between 1 and 31
+        month (int): month between 1 and 12
+        year (int): year between 1900 and 2100
+
+    Returns:
+        list: list of [day, month, year]
+    """
+
     if (day == 31) or (day == 30 and month in [4,6,9,11]) or (day == 29 and month == 2) or (day == 28 and month == 2 and not is_leap_year(year)):
     # If any if these is true, we are the last day of the month (31th day or 30 days month or february (leap year or not))
         if (month == 12):
@@ -88,7 +98,17 @@ def next_date(day,month,year):
     return [day,month,year]
 
 def number_of_days(start_date, end_date):
-    
+    """Get number of days between two dates
+    Pre : end_date must be after start_date
+
+    Args:
+        start_date (list): list of [day, month, year]
+        end_date (list): list of [day, month, year]
+
+    Returns:
+        int: Number of days between two dates
+    """
+
     current_date = start_date
     n_days = 0
     
@@ -100,6 +120,16 @@ def number_of_days(start_date, end_date):
     return n_days
 
 def age(birth_date, today_date):
+    """Get someone's age between its birth date and another date
+
+    Args:
+        birth_date (list): list of [day, month, year]
+        today_date (list): list of [day, month, year]
+
+    Returns:
+        int: someone's age
+    """
+
     age = today_date[2] - birth_date[2]
     if (today_date[1] < birth_date[1]) or (today_date[1] == birth_date[1] and today_date[0] < birth_date[0]):
         age-=1
