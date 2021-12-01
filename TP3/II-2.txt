@@ -1,0 +1,5 @@
+Soit n le nombre d'éléments dans le tableau (9 dans notre cas)
+Cas où la valeur figure au début du tableau : 1 comparaison
+Cas où la valeur figure au milieu du tableau : round(n/2) (dans notre cas, round(9/2) = 5 comparaisons)
+Cas où la valeur figure à la fin du tableau : n (9 dans notre cas)
+Cas où la valeur ne figure pas dans le tableau : n (9 dans notre cas)
