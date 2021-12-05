@@ -28,12 +28,20 @@ if __name__ == "__main__":
             nb = nb / i
         i+=1
     
-    #calcul du PGCD
+    #calcul du PGCD et des coefficients de Bézout
     nb = save_nb
-    while nb%nb2 != 0 :
-        temp = nb
-        nb = nb2
-        nb2 = temp % nb2
+
+    u,b = 1,1
+    v,a = 0,0
+    while nb2 != 0 :
+        c = nb // nb2
+        nb, u, v, nb2, a, b = nb2, a, b, nb - c * nb2, u - c * a, v - c * b
+    if nb > 0:
+        nb2 = nb
+    else:
+        nb2 = -nb
+        u = -u
+        v = -v
 
     #affichage des résulats
     nb = save_nb
@@ -49,4 +57,5 @@ if __name__ == "__main__":
         print("x",i, end = ' ')
     print()
 
-    print("Le PGCD de",nb,"et",save_nb2,"est",abs(nb2))
+    print("Le PGCD de",nb,"et",save_nb2,"est",nb2)
+    print("Avec u =",u,"et v =",v)
