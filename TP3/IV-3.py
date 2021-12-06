@@ -1,4 +1,12 @@
 def merge_sort(tab):
+    """Perform a merge sort in a list of integers
+
+    Args:
+        tab (list): 
+
+    Returns:
+        list: Sorted list
+    """
 
     # If the list has more than 1 element
     if len(tab) > 1:
@@ -24,6 +32,15 @@ def merge_sort(tab):
 
 
 def merge(left,right):
+    """Merge two list
+
+    Args:
+        left ([type]): [description]
+        right ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
 
     # Index for left and right tab
     i = 0

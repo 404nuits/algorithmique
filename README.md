@@ -12,4 +12,4 @@ TODO
 
 - Ewen
   - TP3 : I-3.txt
-  - Commentaires II, III et IV
+  - Commentaires III et IV
