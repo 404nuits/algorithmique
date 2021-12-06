@@ -11,5 +11,4 @@ Exemple : **algo-alice.e21001234-bob.e21005678.zip**
 TODO
 
 - Ewen
-  - TP3 : I-3.txt
-  - Commentaires III et IV
+  - Problem while replacing for example zidane by zinedine zidane in je suis zinedine zidane

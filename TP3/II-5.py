@@ -88,20 +88,24 @@ def replace_all(text,old,new):
     """
     
     # We find first occurence of old string in text
-    found = contains(text, old)
+    
+    found = contains(text, old) == -1
 
     # While there is an occurence,
-    while found != -1:
+    while found:
 
         # We replace this occurence by new text
         text = replace(text, old, new)
 
         # And we find next occurence
-        found = contains(text, old)
+        found = contains(text, old) == -1
 
     return text
 
 if __name__ == '__main__':
-    text = "lorem ipsum sic dolor"
-    print(replace_all(text, "s", "f"))
-    
+
+    text = input("Rentrez un texte : ")
+    old = input("Rentrez la chaîne à remplacer : ")
+    new = input("Rentrez la chaîne par laquelle la remplacer : ")
+
+    print(replace_all(text, old, new))
